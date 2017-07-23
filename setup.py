@@ -22,7 +22,7 @@ version = '0.6.1'
 README = """Python class to integrate Boto3's Cognito client so it is easy to login users. With SRP support."""
 
 setup(
-    name='warrant',
+    name='warrant-ext',
     version=version,
     description=README,
     long_description=README,
@@ -38,6 +38,9 @@ setup(
     author_email='opensource@capless.io',
     maintainer='Brian Jinwright',
     packages=find_packages(),
+    package_data={
+        '': ['requirements.txt']
+    },
     url='https://github.com/capless/warrant',
     license='Apache License 2.0',
     install_requires=requirements_from_file(),
