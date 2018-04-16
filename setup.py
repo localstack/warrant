@@ -11,6 +11,12 @@ def requirements_from_file(filename='requirements.txt'):
     return [r for r in reqs if re.match(r"^\w+", r)]
 
 
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
+
+
 version = '0.6.1'
 
 README = """Python class to integrate Boto3's Cognito client so it is easy to login users. With SRP support."""
@@ -36,7 +42,7 @@ setup(
     license='Apache License 2.0',
     install_requires=requirements_from_file(),
     extras_require={
-        'dev': requirements_from_file('requirements_test.txt')
+        'test': parse_requirements('requirements_test.txt')
     },
     include_package_data=True,
     zip_safe=True,
