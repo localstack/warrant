@@ -13,11 +13,13 @@ def requirements_from_file(filename='requirements.txt'):
 
 def parse_requirements(filename):
     """ load requirements from a pip requirements file """
+    if not os.path.exists(filename):
+        return []
     lineiter = (line.strip() for line in open(filename))
     return [line for line in lineiter if line and not line.startswith("#")]
 
 
-version = '0.6.1'
+version = '0.6.1.1'
 
 README = """Python class to integrate Boto3's Cognito client so it is easy to login users. With SRP support."""
 
