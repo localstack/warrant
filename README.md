@@ -1,3 +1,7 @@
+> [!WARNING]  
+> This repo has been archived in favor of [NabuCasa/pycognito](https://github.com/NabuCasa/pycognito/).
+
+
 ![alt text](https://s3.amazonaws.com/capless/images/warrant-small.png "Warrant - Serverless Authentication")
 
 # Warrant
